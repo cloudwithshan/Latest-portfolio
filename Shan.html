@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mohd Zeeshan | Cloud & DevOps Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#1a1a2a;overflow-x:hidden;}
+:root{
+  --teal:#29b8c2;--dark:#1a1a2a;--gray:#6b7280;--coin:#f5a623;
+  --pixel:'Press Start 2P',monospace;--shadow:4px 4px 0px #1a1a2a;
+}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:2px solid var(--dark);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-box{width:44px;height:44px;background:var(--teal);border:2px solid var(--dark);display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--dark);transition:transform .3s ease;}
+.nav-logo:hover .nav-logo-box{transform:rotate(360deg);}
+.nav-logo-box span{font-family:var(--pixel);font-size:9px;color:#fff;}
+.nav-logo-text{font-family:var(--pixel);font-size:11px;color:var(--dark);}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{font-family:var(--pixel);font-size:10px;color:var(--dark);text-decoration:none;letter-spacing:1px;transition:color .2s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-coin{display:flex;align-items:center;gap:8px;border:2px solid var(--dark);padding:8px 14px;box-shadow:3px 3px 0 var(--dark);font-family:var(--pixel);font-size:12px;}
+.coin-dot{width:18px;height:18px;background:var(--coin);border-radius:50%;border:2px solid var(--dark);}
+/* HERO */
+#hero{min-height:100vh;background:linear-gradient(160deg,#d6f0f5 0%,#e8f8fa 50%,#f5fcfd 100%);display:flex;align-items:center;justify-content:center;padding:100px 80px 60px;gap:80px;}
+.hero-avatar{flex-shrink:0;width:300px;height:300px;background:var(--teal);border:3px solid var(--dark);box-shadow:6px 6px 0 var(--dark);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease;}
+.hero-avatar:hover{transform:translateY(-8px);box-shadow:8px 12px 0 var(--dark);}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-avatar-star{position:absolute;top:-20px;right:-20px;font-size:38px;filter:drop-shadow(2px 2px 0 rgba(0,0,0,.3));z-index:10;}
+.hero-avatar-code{font-family:var(--pixel);font-size:38px;color:#fff;letter-spacing:-2px;}
+.hero-content{display:flex;flex-direction:column;gap:22px;max-width:560px;}
+.hero-name{font-family:var(--pixel);font-size:40px;color:var(--dark);line-height:1.5;letter-spacing:2px;}
+.hero-role{font-family:var(--pixel);font-size:16px;color:var(--teal);letter-spacing:2px;line-height:1.8;}
+.hero-desc{font-size:14px;font-weight:bold;color:var(--gray);line-height:1.8;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px;}
+.btn-primary{font-family:var(--pixel);font-size:11px;background:var(--teal);color:#fff;border:2px solid var(--dark);padding:16px 22px;box-shadow:var(--shadow);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;letter-spacing:1px;transition:transform .1s,box-shadow .1s;}
+.btn-primary:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--dark);}
+.btn-outline{font-family:var(--pixel);font-size:11px;background:#fff;color:var(--dark);border:2px solid var(--dark);padding:16px 22px;box-shadow:var(--shadow);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;letter-spacing:1px;transition:transform .1s,box-shadow .1s;}
+.btn-outline:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--dark);}
+/* SECTIONS */
+section:not(#hero){padding:80px 80px;}
+.sec-head{font-family:var(--pixel);font-size:32px;color:var(--dark);text-align:center;letter-spacing:2px;margin-bottom:12px;}
+.sec-sub{font-size:16px;color:var(--gray);text-align:center;margin-bottom:56px;line-height:1.6;}
+/* ABOUT */
+#about{background:#fff;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto;}
+.about-card{background:#fff;border:2px solid var(--dark);box-shadow:var(--shadow);padding:28px;}
+.about-card h3{font-family:var(--pixel);font-size:10px;color:var(--teal);margin-bottom:18px;letter-spacing:1px;}
+.about-card li{font-size:14px;color:var(--gray);line-height:2;list-style:none;font-weight:bold;}
+.about-card li::before{content:'▸ ';color:var(--teal);}
+/* SKILLS */
+#skills{background:#fafafa;}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto;}
+.skill-card{background:#fff;border:2px solid var(--dark);box-shadow:var(--shadow);padding:28px 28px 22px;}
+.skill-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.skill-card-name{font-size:17px;color:var(--dark);font-weight:600;}
+.skill-card-icon{font-size:24px;}
+.skill-lvl-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.skill-lvl-label{font-family:var(--pixel);font-size:10px;color:var(--dark);letter-spacing:1px;}
+.skill-lvl-num{font-family:var(--pixel);font-size:11px;color:var(--dark);}
+.skill-bar-track{width:100%;height:20px;background:#e5e7eb;border:1px solid #d1d5db;}
+.skill-bar-fill{height:100%;animation:fillBar 1.2s ease forwards;}
+@keyframes fillBar{from{width:0%}}
+.bar-aws{background:#3b82f6;width:90%;}
+.bar-docker{background:#06b6d4;width:85%;}
+.bar-k8s{background:#8b5cf6;width:72%;}
+.bar-tf{background:#7c3aed;width:68%;}
+.bar-ci{background:#f59e0b;width:80%;}
+.bar-linux{background:#10b981;width:85%;}
+.bar-grafana{background:#f97316;width:70%;}
+.bar-python{background:#ef4444;width:75%;}
+/* PROJECTS */
+#projects{background:#fff;}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+.project-card{background:#fff;border:2px solid var(--dark);box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column;gap:14px;transition:transform .1s,box-shadow .1s;}
+.project-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--dark);}
+.project-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+.project-card-name{font-size:16px;color:var(--dark);font-weight:600;line-height:1.4;}
+.project-coin{display:flex;align-items:center;gap:5px;background:var(--coin);border:2px solid var(--dark);padding:5px 10px;flex-shrink:0;font-family:var(--pixel);font-size:10px;color:var(--dark);white-space:nowrap;}
+.project-coin .cdot{width:12px;height:12px;background:#fff;border-radius:50%;border:1px solid var(--dark);}
+.project-desc{font-size:13px;color:var(--gray);line-height:1.7;flex:1;}
+.project-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.project-tag{font-family:var(--pixel);font-size:9px;border:2px solid var(--dark);padding:6px 10px;color:var(--dark);background:#fff;}
+/* CONTACT */
+#contact{background:#fafafa;}
+.contact-wrap{max-width:740px;margin:0 auto;background:#fff;border:2px solid var(--dark);box-shadow:var(--shadow);padding:40px;}
+.form-field{margin-bottom:24px;}
+.form-label{display:block;font-family:var(--pixel);font-size:10px;color:var(--dark);margin-bottom:10px;letter-spacing:1px;}
+.form-input,.form-textarea{width:100%;border:2px solid var(--dark);padding:14px 16px;font-size:15px;font-family:inherit;color:var(--dark);background:#fff;outline:none;transition:box-shadow .15s;}
+.form-input:focus,.form-textarea:focus{box-shadow:3px 3px 0 var(--teal);}
+.form-textarea{height:140px;resize:vertical;}
+.btn-send{width:100%;font-family:var(--pixel);font-size:11px;background:var(--teal);color:#fff;border:2px solid var(--dark);padding:18px;box-shadow:var(--shadow);cursor:pointer;letter-spacing:2px;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .1s,box-shadow .1s;}
+.btn-send:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--dark);}
+/* FOOTER */
+footer{background:#2d3748;color:#e2e8f0;padding:56px 80px 32px;}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.footer-brand-name{font-family:var(--pixel);font-size:12px;color:#fff;margin-bottom:14px;}
+.footer-brand-desc{font-size:14px;color:#a0aec0;line-height:1.8;}
+.footer-links-title,.footer-connect-title{font-family:var(--pixel);font-size:10px;color:#fff;margin-bottom:18px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-links a{font-size:14px;color:#a0aec0;text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:#fff;}
+.social-icons{display:flex;gap:12px;}
+.social-icon{width:48px;height:48px;background:#3d4a5c;border:2px solid #4a5568;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;transition:background .2s;}
+.social-icon:hover{background:var(--teal);}
+hr.foot-div{border:none;height:1px;background:#4a5568;margin-bottom:24px;}
+.footer-copy{font-family:var(--pixel);font-size:9px;color:#718096;text-align:center;letter-spacing:1px;}
+/* FADE */
+.fade{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade.show{opacity:1;transform:none;}
+/* MOBILE */
+@media(max-width:900px){
+  #hero{flex-direction:column;padding:100px 24px 60px;text-align:center;gap:40px;}
+  .hero-avatar{width:200px;height:200px;}
+  .hero-avatar-code{font-size:24px;}
+  .hero-name{font-size:22px;}
+  .hero-role{font-size:11px;}
+  .hero-btns{justify-content:center;}
+  section:not(#hero){padding:60px 20px;}
+  .about-grid,.skills-grid,.footer-grid{grid-template-columns:1fr;}
+  .projects-grid{grid-template-columns:1fr;}
+  nav{padding:0 20px;}
+  .nav-links{gap:16px;}
+  .nav-links a{font-size:7px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="Mohd_Zeeshan_DevOps_Engineer_Resume.pdf" class="nav-logo">
+    <div class="nav-logo-box"><span>&lt;&gt;</span></div>
+    <span class="nav-logo-text">CV</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#skills">SKILLS</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+  <div class="nav-coin">
+    <div class="coin-dot"></div>
+    <span id="coin-count">0</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-avatar">
+    <span class="hero-avatar-star"></span>
+    <img src="Image.png" alt="Mohd Zeeshan"/>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-name">MOHD ZEESHAN</h1>
+    <p class="hero-role">CLOUD &amp; DEVOPS ENGINEER</p>
+    <p class="hero-desc">Building scalable cloud infrastructure and crushing deployment challenges like boss battles. AWS-trained engineer with hands-on XP in Docker, CI/CD pipelines, and secure VPC architecture.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">🚀 VIEW PROJECTS</a>
+      <a href="#contact" class="btn-outline">✉ HIRE ME</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <h2 class="sec-head">ABOUT ME</h2>
+  <p class="sec-sub">DevOps engineer by day , Content creator by night</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>PLAYER INFO</h3>
+      <ul>
+        <li>Name — Mohd Zeeshan</li>
+        <li>Alias — CloudWithShan</li>
+        <li>Role — Cloud & DevOps Engineer</li>
+        <li>XP — 1+ Year Hands-on</li>
+        <li>Base — Meerut, Uttar Pradesh</li>
+        <li>Target — Noida/Gurugram/Pune/Bangalore/US</li>
+        <li>Status — <strong style="color:#16a34a">● Open to Work</strong></li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>SIDE QUESTS</h3>
+      <ul>
+        <li>YouTube & Facebook — CloudWithShan (~4.6K) Hindi DevOps tutorials</li>
+        <li>GitHub — github.com/cloudwithshan</li>
+        <li>B.Tech CS — AKTU 2025, CGPA 7.19</li>
+        <li>Training — AWS Cloud Trainee @ Softcrayons Tech, Noida</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade">
+  <h2 class="sec-head">PLAYER STATS</h2>
+  <p class="sec-sub">Skills leveled up through real-world cloud deployments</p>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-card-top"><span class="skill-card-name">AWS</span><span class="skill-card-icon">☁️</span></div>
+      <div class="skill-lvl-row"><span class="skill-lvl-label">LVL</span><span class="skill-lvl-num">90</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill bar-aws"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-top"><span class="skill-card-name">Docker &amp; Containers</span><span class="skill-card-icon">🐳</span></div>
+      <div class="skill-lvl-row"><span class="skill-lvl-label">LVL</span><span class="skill-lvl-num">85</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill bar-docker"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-top"><span class="skill-card-name">Kubernetes</span><span class="skill-card-icon">⚙️</span></div>
+      <div class="skill-lvl-row"><span class="skill-lvl-label">LVL</span><span class="skill-lvl-num">72</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill bar-k8s"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-top"><span class="skill-card-name">Terraform (IaC)</span><span class="skill-card-icon">🏗️</span></div>
+      <div class="skill-lvl-row"><span class="skill-lvl-label">LVL</span><span class="skill-lvl-num">68</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill bar-tf"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-top"><span class="skill-card-name">CI/CD — GitHub Actions</span><span class="skill-card-icon">⚡</span></div>
+      <div class="skill-lvl-row"><span class="skill-lvl-label">LVL</span><span class="skill-lvl-num">80</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill bar-ci"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-top"><span class="skill-card-name">Linux (Ubuntu)</span><span class="skill-card-icon">🐧</span></div>
+      <div class="skill-lvl-row"><span class="skill-lvl-label">LVL</span><span class="skill-lvl-num">85</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill bar-linux"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-top"><span class="skill-card-name">Grafana &amp; Monitoring</span><span class="skill-card-icon">📊</span></div>
+      <div class="skill-lvl-row"><span class="skill-lvl-label">LVL</span><span class="skill-lvl-num">70</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill bar-grafana"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-top"><span class="skill-card-name">Python &amp; Flask</span><span class="skill-card-icon">💪</span></div>
+      <div class="skill-lvl-row"><span class="skill-lvl-label">LVL</span><span class="skill-lvl-num">75</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill bar-python"></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade">
+  <h2 class="sec-head">QUEST LOG</h2>
+  <p class="sec-sub">Projects completed on the cloud journey</p>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-name">Two-Tier Flask App on Docker</span>
+        <div class="project-coin"><div class="cdot"></div>20</div>
+      </div>
+      <p class="project-desc">Flask + MySQL app containerised with Docker Compose. Secure networking, env vars, fully portable and scalable.</p>
+      <div class="project-tags">
+        <span class="project-tag">Docker</span>
+        <span class="project-tag">Flask</span>
+        <span class="project-tag">MySQL</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-name">CI/CD Pipeline via GitHub Actions</span>
+        <div class="project-coin"><div class="cdot"></div>18</div>
+      </div>
+      <p class="project-desc">Automated build and deploy pipeline for containerised apps. Zero manual deployment errors.</p>
+      <div class="project-tags">
+        <span class="project-tag">GitHub Actions</span>
+        <span class="project-tag">CI/CD</span>
+        <span class="project-tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-name">Static Website on S3 + CloudFront</span>
+        <div class="project-coin"><div class="cdot"></div>15</div>
+      </div>
+      <p class="project-desc">Hosted static website on S3 with CloudFront CDN. Bucket policies and origin access control configured.</p>
+      <div class="project-tags">
+        <span class="project-tag">AWS S3</span>
+        <span class="project-tag">CloudFront</span>
+        <span class="project-tag">CDN</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade">
+  <h2 class="sec-head">START A QUEST</h2>
+  <p class="sec-sub">Let's team up and build something legendary</p>
+  <div class="contact-wrap">
+    <div class="form-field">
+      <label class="form-label">NAME</label>
+      <input class="form-input" type="text" placeholder="Enter your name"/>
+    </div>
+    <div class="form-field">
+      <label class="form-label">EMAIL</label>
+      <input class="form-input" type="email" placeholder="your@email.com"/>
+    </div>
+    <div class="form-field">
+      <label class="form-label">MESSAGE</label>
+      <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+    </div>
+    <a href="https://wa.me/918533855864?text=Hello%20Zeeshan" target="_blank" class="btn-send">SEND MESSAGE</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">MOHD ZEESHAN</div>
+      <p class="footer-brand-desc">Cloud & DevOps engineer building scalable infrastructure. Always ready for the next deployment challenge.</p>
+    </div>
+    <div>
+      <div class="footer-links-title">QUICK LINKS</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-connect-title">CONNECT</div>
+      <div class="social-icons">
+        <a href="https://github.com/cloudwithshan" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/mohd-zeeshan-b1806a287" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contactshan143@gmail.com" target="_blank" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+  <hr class="foot-div"/>
+  <p class="footer-copy">© 2025 MOHD ZEESHAN. BUILT WITH AI & HTML</p>
+</footer>
+
+<script>
+// Coin counter scrolls up
+let coins = 0;
+const coinEl = document.getElementById('coin-count');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  const target = Math.floor(pct * 99);
+  if (target > coins) { coins = target; coinEl.textContent = coins; }
+});
+
+// Fade in sections
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
